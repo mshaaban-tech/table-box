@@ -1,0 +1,33 @@
+cell-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    caret-color: var(--primary-color);
+    unicode-bidi: plaintext;
+    outline: initial;
+    overflow: auto;
+
+    > p {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: initial;
+        padding: initial;
+        z-index: 2;
+
+        &:last-of-type {
+            flex: 1;
+        }
+
+        &,
+        span {
+            word-break: break-all;
+            unicode-bidi: plaintext;
+        }
+
+        span {
+            display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "TableBox: Start",
+            "type": "npm",
+            "script": "debug",
+            // "command": "${workspaceFolder}/node_modules/parcel-bundler/bin/cli.js",
+            // "args": [
+            //     "--port",
+            //     "4400",
+            //     "--target",
+            //     "browser",
+            //     "${workspaceFolder}/src/index.html"
+            // ],
+            "isBackground": true,
+            "problemMatcher": {
+                "fileLocation": "absolute",
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*",
+                    "endsPattern": "Built"
+                },
+                "pattern": {
+                    "regexp": ""
+                }
+            }
+        }
+    ]
+}

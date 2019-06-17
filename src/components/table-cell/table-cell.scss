@@ -1,0 +1,55 @@
+table-cell {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: 1px solid #eee;
+    outline: initial;
+    animation-name: cellUp;
+    animation-fill-mode: both;
+    animation-duration: 300ms;
+    transform: translate3d(0, 0, 0);
+    transition: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    &.mce-edit-focus,
+    &.active-cell,
+    &:focus,
+    &:focus-within {
+        border-color: rgba(var(--primary-color), 0.3);
+        box-shadow: 1px 1px 10px rgba(var(--primary-color), 0.3), -1px -1px 10px rgba(var(--primary-color), 0.3);
+        z-index: 3;
+    }
+
+    &.selected-cell {
+        border-color: rgba(var(--primary-color), 0.5);
+        box-shadow: 1px 1px 10px rgba(var(--primary-color), 0.3), -1px -1px 10px rgba(var(--primary-color), 0.3);
+        user-select: none;
+
+        &:after {
+            background-color: rgba(var(--primary-color), 0.2);
+        }
+    }
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        transition: 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+}
+
+@keyframes cellUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

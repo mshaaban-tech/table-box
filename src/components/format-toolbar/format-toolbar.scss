@@ -1,0 +1,62 @@
+format-toolbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    opacity: 0;
+    visibility: hidden;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px rgba(var(--primary-color), 0.3), -1px -1px 10px rgba(var(--primary-color), 0.3);
+    transform: translate3d(0, 0, 0);
+    animation-duration: 300ms;
+    animation-fill-mode: both;
+    z-index: -1;
+
+    &.open-toolbar {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, -100%, 0);
+        z-index: 40;
+        animation-name: ShowToolbar;
+    }
+
+    &.close-toolbar {
+        animation-name: HideToolbar;
+    }
+}
+
+@keyframes ShowToolbar {
+    0% {
+        opacity: 1;
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+        z-index: -1;
+    }
+
+    99% {
+        opacity: 1;
+        transform: translate3d(0, -100%, 0);
+        z-index: -1;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, -100%, 0);
+        z-index: 40;
+    }
+}
+
+@keyframes HideToolbar {
+    from {
+        opacity: 1;
+        transform: translate3d(0, -100%, 0);
+        z-index: 40;
+    }
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+        transform: translate3d(0, 0, 0);
+        z-index: -1;
+    }
+}

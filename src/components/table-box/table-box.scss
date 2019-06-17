@@ -1,0 +1,51 @@
+@import '../../styles/colors.scss';
+
+.table-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+}
+
+.table-wrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+    // overflow: auto;
+}
+
+table-box {
+    position: relative;
+    display: grid;
+    flex: 1;
+    background-color: #fff;
+}
+
+[id^='prevSlides'] {
+    .table-container {
+        .table-wrapper {
+            overflow: initial !important;
+
+            format-toolbar {
+                display: none !important;
+            }
+
+            table-cell {
+                border-color: #eee !important;
+                box-shadow: initial !important;
+                z-index: initial !important;
+            }
+        }
+    }
+}
+
+@import '../table-cell/table-cell.scss';
+@import '../cell-content/cell-content.scss';
+@import '../resize-column/resize-column.scss';
+@import '../resize-row/resize-row.scss';
+@import '../color-picker/color-picker.scss';
+@import '../format-toolbar/format-toolbar.scss';
+@import '../format-cell/format-cell.scss';
+@import '../right-menu/right-menu.scss';

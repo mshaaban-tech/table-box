@@ -1,0 +1,15 @@
+@import '../../styles/colors.scss';
+
+color-picker {
+    #svg-container {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px #ccc;
+        z-index: 1000;
+
+        >svg {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+    }
+}
