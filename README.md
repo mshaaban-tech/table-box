@@ -11,7 +11,10 @@ TableBOX is an html custom element using css grid for layout [demo](https://muha
 -   Add host listener to element
 -   Format text
 -   Add column & row
+-   Select cells
 -   Merge cells
+-   Navigate between cells using arrow keys
+-   Auto text direction
 
 ## TODO
 
