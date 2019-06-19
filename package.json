@@ -22,7 +22,7 @@
         "start": "npm run debug -- --open",
         "debug": "parcel --port 4400 --target browser src/index.html",
         "build": "parcel build --no-source-maps --bundle-node-modules --no-content-hash src/index.html",
-        "build:demo": "npm run build -- -d demo",
+        "build:demo": "npm run build -- -d demo --public-url '.' && git subtree push --prefix demo origin gh-pages",
         "serve": "http-server -g -o -a 0.0.0.0 ./dist",
         "predebug": "npm run clean",
         "prebuild": "npm run clean",
