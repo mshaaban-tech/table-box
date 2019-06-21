@@ -60,6 +60,10 @@ export class HTMLTableBoxElement extends CustomElementClass {
     private isFocus!: boolean;
 
     public connectedCallback() {
+        this.initial = this.initial || true;
+        this.rows = this.rows || 1;
+        this.columns = this.columns || 1;
+
         if (!this.initial) return;
         this.initial = false;
 
@@ -220,7 +224,7 @@ export class HTMLTableBoxElement extends CustomElementClass {
     }
 
     public activeFirstCell() {
-        (this.children[0] as HTMLElement).focus();
+        if (this.children.length) (this.children[0] as HTMLElement).focus();
     }
 
     public mergeCells() {
