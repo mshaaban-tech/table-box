@@ -65,8 +65,6 @@ export class HTMLTableBoxElement extends CustomElementClass {
         this.columns = this.columns || 1;
 
         if (!this.initial) return;
-        this.initial = false;
-
         this.generateTable(this.rows, this.columns);
     }
 
@@ -77,6 +75,7 @@ export class HTMLTableBoxElement extends CustomElementClass {
     }
 
     public generateTable(rows: number, columns: number) {
+        this.initial = false;
         this.tabIndex = 1;
         this.rows = rows;
         this.columns = columns;
