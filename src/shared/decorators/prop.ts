@@ -7,9 +7,8 @@ export const Prop = (type: string = ''): any => (prototype: any, key: any, descr
     };
 
     const setter = function(this: HTMLElement, newVal: any) {
-        if ((newVal && (newVal.length || Number.isInteger(newVal))) || typeof newVal === 'boolean') {
-            this.setAttribute(key, newVal!.toString() || '');
-        }
+        newVal = newVal!.toString() || '';
+        if (newVal) this.setAttribute(key, newVal);
     };
 
     descriptor = descriptor || {};
