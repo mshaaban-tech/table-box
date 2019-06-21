@@ -20,7 +20,7 @@ export class HTMLRightMenu extends CustomElementClass {
     public currentCell!: HTMLTableBoxCellElement | null;
 
     public connectedCallback() {
-        if (!this.initial) return;
+        if (this.initial === false) return;
         this.initial = false;
         this.isShown = false;
 

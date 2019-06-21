@@ -43,7 +43,7 @@ export class HTMLTableBoxColorPickerElement extends CustomElementClass {
     public ptMove!: Point;
 
     public connectedCallback() {
-        if (!this.initial) return (this.pickers = this.svgPickers());
+        if (this.initial === false) return (this.pickers = this.svgPickers());
 
         this.initial = false;
         this.init();

@@ -60,7 +60,7 @@ export class HTMLTableBoxElement extends CustomElementClass {
     private isFocus!: boolean;
 
     public connectedCallback() {
-        this.initial = this.initial || true;
+        this.initial = this.initial === false ? this.initial : true;
         this.rows = this.rows || 1;
         this.columns = this.columns || 1;
 

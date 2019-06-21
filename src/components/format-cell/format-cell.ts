@@ -24,7 +24,8 @@ export class FormatCell extends CustomElementClass {
     }
 
     public connectedCallback() {
-        if (this.initial) this.initialize();
+        if (this.initial === false) return;
+        this.initialize();
     }
 
     public initialize() {
@@ -137,7 +138,7 @@ export class FormatCell extends CustomElementClass {
 
     public formatDoc(command: string, { text = null, value }: any) {
         const fullText = this.parentNode.innerText.trim();
-        const selectedText = this.selectedText.toString().trim();
+        const selectedText = this.selectedText!.toString().trim();
         // if (text && this.currentDropDown) (this.currentDropDown.querySelector('button > span') as HTMLElement).innerText = text;
 
         if (fullText.length && selectedText.length) document.execCommand(command, false, value);
@@ -146,7 +147,7 @@ export class FormatCell extends CustomElementClass {
 
     public formatCustomDoc(key: any, { text = null, value }: any) {
         const fullText = this.parentNode.innerText.trim();
-        const selectedText = this.selectedText.toString().trim();
+        const selectedText = this.selectedText!.toString().trim();
         const tagLocalName = this.parentNode.localName;
         if (!fullText.length || !selectedText.length) return this.focusCellContent();
 
@@ -182,10 +183,10 @@ export class FormatCell extends CustomElementClass {
 
             // Update Selection
             const lastChild = this.parentNode.lastChild as HTMLElement;
-            this.selectedText.removeAllRanges();
+            this.selectedText!.removeAllRanges();
             const range = document.createRange();
             range.selectNodeContents(lastChild);
-            this.selectedText.addRange(range);
+            this.selectedText!.addRange(range);
         }
 
         this.focusCellContent();
@@ -205,12 +206,12 @@ export class FormatCell extends CustomElementClass {
     }
 
     get parentNode(): HTMLElement {
-        const focusNode = (this.selectedText.focusNode || document.activeElement) as HTMLElement;
+        const focusNode = (this.selectedText!.focusNode || document.activeElement) as HTMLElement;
 
         return focusNode.parentNode as HTMLElement;
     }
 
-    get selectedText(): Selection {
+    get selectedText(): Selection | null {
         return window.getSelection();
     }
 }

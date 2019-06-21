@@ -13,7 +13,7 @@ export class HTMLFormatToolbar extends CustomElementClass {
     public initial!: boolean;
 
     public connectedCallback() {
-        if (!this.initial) return;
+        if (this.initial === false) return;
         this.initial = false;
 
         this.insertAdjacentHTML('beforeend', '<format-cell initial="true" />');

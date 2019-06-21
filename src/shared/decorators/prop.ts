@@ -1,4 +1,4 @@
-export const Prop = (type: string = ''): any => (target: HTMLElement, key: any, descriptor: TypedPropertyDescriptor<any>) => {
+export const Prop = (type: string = ''): any => (prototype: any, key: any, descriptor: TypedPropertyDescriptor<any>) => {
     const getter = function(this: HTMLElement) {
         let value = this.getAttribute(key) as any;
         let typeArr = type.split(':');
@@ -7,7 +7,9 @@ export const Prop = (type: string = ''): any => (target: HTMLElement, key: any, 
     };
 
     const setter = function(this: HTMLElement, newVal: any) {
-        this.setAttribute(key, newVal!.toString() || '');
+        if ((newVal && (newVal.length || Number.isInteger(newVal))) || typeof newVal === 'boolean') {
+            this.setAttribute(key, newVal!.toString() || '');
+        }
     };
 
     descriptor = descriptor || {};
