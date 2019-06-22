@@ -397,7 +397,8 @@ export class HTMLTableBoxElement extends CustomElementClass {
         if (evt.which == 3) return;
 
         const startCell = (evt.target as HTMLElement).closest('table-cell') as HTMLTableBoxCellElement;
-        if (!startCell) return;
+        const isResizeElement = ['resize-row', 'resize-column'].includes((evt.target as HTMLElement).tagName.toLowerCase());
+        if (!startCell && isResizeElement) return;
 
         const self = this;
         let firstRow: number;
