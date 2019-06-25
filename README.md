@@ -18,8 +18,10 @@ TableBOX is an html custom element using css grid for layout [demo](https://muha
 
 ## TODO
 
+-   Remove column/row
 -   Format table
 -   Format cell
+-   Add state management
 
 ### Prerequisites
 
