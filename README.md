@@ -117,8 +117,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 -   [Creating a Custom Element Decorator Using Typescript](https://medium.com/@gilfink/creating-a-custom-element-decorator-using-typescript-302e7ed3a3d1)
--   [Helpful Decorators](https://github.com/NetanelBasal/helpful-decorators) - Helpful decorators for typescript projects
--   [Lit Element](https://github.com/Polymer/lit-element) - A simple base class for creating fast, lightweight web components
--   [Alit Element](https://github.com/pshihn/alit-element) - A simple base class that extends lit-element with some utility functions and adds decorators
--   [Stencil Color Picker Web Component](https://github.com/jepiqueau/stencil-color-picker) - Stencil Color Picker Web Component
--   [Making content editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)
+-   [Helpful Decorators](https://github.com/NetanelBasal/helpful-decorators) - Helpful decorators for typescript projects.
+-   [Lit Element](https://github.com/Polymer/lit-element) - A simple base class for creating fast, lightweight web components.
+-   [Alit Element](https://github.com/pshihn/alit-element) - A simple base class that extends lit-element with some utility functions and adds decorators.
+-   [Stencil Color Picker Web Component](https://github.com/jepiqueau/stencil-color-picker) - Stencil Color Picker Web Component.
+-   [Making content editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content) - How to transform web page into a full and fast rich text editor.
