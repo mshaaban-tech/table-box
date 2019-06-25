@@ -49,7 +49,7 @@ export class HTMLTableBoxCellElement extends CustomElementClass {
         this.innerHTML = `
             <resize-row></resize-row>
             <resize-column></resize-column>
-            <cell-content contentEditable="true"></cell-content>
+            <cell-content contentEditable="true"><p></p></cell-content>
         `;
 
         this.setPosition(cellPosition);
