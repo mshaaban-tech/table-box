@@ -121,3 +121,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 -   [Lit Element](https://github.com/Polymer/lit-element) - A simple base class for creating fast, lightweight web components
 -   [Alit Element](https://github.com/pshihn/alit-element) - A simple base class that extends lit-element with some utility functions and adds decorators
 -   [Stencil Color Picker Web Component](https://github.com/jepiqueau/stencil-color-picker) - Stencil Color Picker Web Component
+-   [Making content editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content)
