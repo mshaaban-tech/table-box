@@ -170,7 +170,7 @@ export class FormatCell extends CustomElementClass {
         } else {
             const el: HTMLSpanElement = document.createElement('span');
             el.style[key] = value;
-            if (key === 'listStyle') el.style.cssText += `display:list-item;margin-left30px`;
+            if (key === 'listStyle') el.style.cssText += `display:list-item;margin-left:30px`;
 
             el.innerText = selectedText;
 
