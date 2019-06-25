@@ -122,3 +122,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 -   [Alit Element](https://github.com/pshihn/alit-element) - A simple base class that extends lit-element with some utility functions and adds decorators.
 -   [Stencil Color Picker Web Component](https://github.com/jepiqueau/stencil-color-picker) - Stencil Color Picker Web Component.
 -   [Making content editable](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Editable_content) - How to transform web page into a full and fast rich text editor.
+    -   [HTML DOM execCommand](https://www.w3schools.com/jsref/met_document_execcommand.asp) - List of available commands used in formating text.
