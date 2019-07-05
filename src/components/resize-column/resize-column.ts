@@ -61,6 +61,8 @@ export class ResizeColumn extends CustomElementClass {
 
     @HostListener('mousedown')
     public onMouseDown(evt: MouseEvent) {
+        if (evt.which == 3) return;
+
         const self = this;
         let cellWidth = self.resizeWidth;
         let pos1: number = 0;
