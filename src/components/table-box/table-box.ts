@@ -397,8 +397,9 @@ export class HTMLTableBoxElement extends CustomElementClass {
         if (evt.which == 3) return;
 
         const startCell = (evt.target as HTMLElement).closest('table-cell') as HTMLTableBoxCellElement;
-        const isResizeElement = ['resize-row', 'resize-column'].includes((evt.target as HTMLElement).tagName.toLowerCase());
-        if (!startCell && isResizeElement) return;
+        const currentElementTagName = (evt.target as HTMLElement).tagName.toLowerCase();
+        const isResizeElement = ['resize-row', 'resize-column'].includes(currentElementTagName);
+        if (!startCell || isResizeElement) return;
 
         const self = this;
         let firstRow: number;
@@ -413,7 +414,7 @@ export class HTMLTableBoxElement extends CustomElementClass {
         self.selectedCells = [startCell];
 
         function onMouseMove(event: MouseEvent) {
-            const currentCell = self.querySelector('table-cell:hover') as HTMLTableBoxCellElement;
+            const currentCell = (document.elementFromPoint(event.pageX, event.pageY) as HTMLElement).closest('table-cell') as HTMLTableBoxCellElement;
             if (!currentCell) return;
             const selectors = [];
 
