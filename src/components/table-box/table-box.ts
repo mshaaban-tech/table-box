@@ -334,8 +334,8 @@ export class HTMLTableBoxElement extends CustomElementClass {
     @HostListener('keydown')
     public onKeyDown(event: KeyboardEvent) {
         const activeCell = (event.target as HTMLElement).closest('table-cell') as HTMLTableBoxCellElement;
-        const keyCode: number = event.keyCode;
-        const keyCodes: number[] = [37, 38, 39, 40, 9];
+        const keyCode: string = event.key;
+        const keyCodes: string[] = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Tab'];
         if (!activeCell || !keyCodes.includes(keyCode)) return;
 
         // const activeCell = this.activeCell;
@@ -344,7 +344,19 @@ export class HTMLTableBoxElement extends CustomElementClass {
         let row;
 
         switch (keyCode) {
-            case 37: // left arrow
+            case 'ArrowUp':
+                column = activeCell.columnStart;
+                row = activeCell.rowStart;
+
+                if (row > 1) targetCell = this.getCellByPosition(`rowend="${row}"`, `columnstart="${column}"`);
+                break;
+            case 'ArrowDown':
+                column = activeCell.columnStart;
+                row = activeCell.rowEnd;
+
+                if (row < this.rows + 1) targetCell = this.getCellByPosition(`rowstart="${row}"`, `columnstart="${column}"`);
+                break;
+            case 'ArrowLeft':
                 column = activeCell.columnStart;
                 row = activeCell.rowStart;
                 if (column < 2) {
@@ -354,13 +366,7 @@ export class HTMLTableBoxElement extends CustomElementClass {
 
                 if (row > 0) targetCell = this.getCellByPosition(`rowstart="${row}"`, `columnend="${column}"`);
                 break;
-            case 38: // up arrow
-                column = activeCell.columnStart;
-                row = activeCell.rowStart;
-
-                if (row > 1) targetCell = this.getCellByPosition(`rowend="${row}"`, `columnstart="${column}"`);
-                break;
-            case 39: // right arrow
+            case 'ArrowRight':
                 column = activeCell.columnEnd;
                 row = activeCell.rowEnd;
                 if (column > this.columns) {
@@ -370,13 +376,7 @@ export class HTMLTableBoxElement extends CustomElementClass {
 
                 if (row < this.rows + 2) targetCell = this.getCellByPosition(`rowend="${row}"`, `columnstart="${column}"`);
                 break;
-            case 40: // bottom arrow
-                column = activeCell.columnStart;
-                row = activeCell.rowEnd;
-
-                if (row < this.rows + 1) targetCell = this.getCellByPosition(`rowstart="${row}"`, `columnstart="${column}"`);
-                break;
-            case 9:
+            case 'Tab':
                 this.unActiveAllCells();
                 this.unSelectAllCells();
                 break;
