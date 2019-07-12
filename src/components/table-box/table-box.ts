@@ -257,12 +257,6 @@ export class HTMLTableBoxElement extends CustomElementClass {
         const currentCell = this.generateCell(cellPosition);
         this.addChild(currentCell);
         for (const cell of this.selectedCells) {
-            if (cell.cellContent.innerText) {
-                const paragraph = document.createElement('p');
-                paragraph.innerText = cell.cellContent.innerText;
-                paragraph.style.cssText = cell.cellContent.style.cssText;
-                currentCell.cellContent.addChild(paragraph);
-            }
             for (let i = 0; i < cell.cellContent.children.length; ++i) {
                 const child = cell.cellContent.children[i] as HTMLElement;
                 currentCell.cellContent.addChild(child);
