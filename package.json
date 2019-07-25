@@ -10,7 +10,7 @@
     "repository": {
         "url": "https://github.com/MuhammadShaban/table-box"
     },
-    "private": true,
+    "private": false,
     "license": "MIT",
     "keywords": [
         "table",
@@ -31,29 +31,29 @@
         "clean": "rimraf dist .cache"
     },
     "dependencies": {
-        "core-js": "^3.1.3",
+        "core-js": "^3.1.4",
         "events": "^3.0.0",
-        "regenerator-runtime": "^0.13.2",
+        "regenerator-runtime": "^0.13.3",
         "utils": "^0.3.1"
     },
     "devDependencies": {
-        "@babel/core": "^7.4.5",
-        "@babel/plugin-transform-runtime": "^7.4.4",
-        "@babel/preset-env": "^7.4.5",
+        "@babel/core": "^7.5.5",
+        "@babel/plugin-transform-runtime": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
         "@types/events": "^3.0.0",
-        "@types/node": "^12.0.8",
-        "autoprefixer": "^9.6.0",
-        "eslint": "^5.16.0",
+        "@types/node": "^12.6.8",
+        "autoprefixer": "^9.6.1",
+        "eslint": "^6.1.0",
         "http-server": "^0.11.1",
-        "husky": "^2.4.1",
-        "lint-staged": "^8.2.1",
+        "husky": "^3.0.1",
+        "lint-staged": "^9.2.1",
         "parcel-bundler": "^1.12.3",
         "prettier": "^1.18.2",
         "rimraf": "^2.6.3",
-        "sass": "^1.21.0",
-        "tslint": "^5.17.0",
+        "sass": "^1.22.7",
+        "tslint": "^5.18.0",
         "tslint-config-prettier": "^1.18.0",
-        "typescript": "^3.5.2"
+        "typescript": "^3.5.3"
     },
     "husky": {
         "hooks": {
