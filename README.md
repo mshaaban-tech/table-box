@@ -1,6 +1,6 @@
 # TableBOX
 
-TableBOX is an html custom element using css grid for layout [demo](https://mshaaban-tech.github.io/table-box/).
+TableBOX is an html custom element using css grid for layout [demo](https://mohamed-rekiba.github.io/table-box/).
 
 ![Screenshot](Screenshot.jpg)
 
